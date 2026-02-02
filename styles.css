@@ -113,8 +113,8 @@ address {
 
 .hero {
     position: relative;
-    width: 100%;
-    min-height: 70vh;
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,10 +122,14 @@ address {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-left: calc(-50vw + 50%);
 }
 
 .hero-overlay {
-    display: none;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
 }
 
 .hero-content {
@@ -142,10 +146,10 @@ address {
 
 /* Hero Logo */
 .hero-logo {
-    max-width: 250px;
+    max-width: 280px;
     height: auto;
-    margin-bottom: var(--spacing-lg);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    margin-bottom: var(--spacing-xl);
+    filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
 }
 
 /* ==========================================================================
