@@ -1,0 +1,23 @@
+# Robots.txt for Cotto e Mangiato
+# https://menu-cottoemangiato.netlify.app/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://menu-cottoemangiato.netlify.app/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Block common unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Allow important resources
+Allow: /manifest.json
+Allow: /*.css
+Allow: /*.js
+Allow: /images/
