@@ -98,6 +98,20 @@
     </script>
 </head>
 <body>
+    <!-- Sticky Header (appears on scroll) -->
+    <header class="sticky-header" id="stickyHeader" role="banner">
+        <div class="sticky-header-container">
+            <a href="#" class="sticky-logo">
+                <img src="./logo.webp" alt="Cotto e Mangiato" class="sticky-logo-img">
+            </a>
+            <nav class="sticky-nav" aria-label="Navigazione principale">
+                <a href="#feature-blocks" class="nav-link">La Nostra Cucina</a>
+                <a href="./menu.html" class="nav-link">Menu</a>
+                <a href="tel:0833509536" class="nav-link nav-link--cta">Prenota un Tavolo</a>
+            </nav>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="main-content" role="main">
         <!-- Hero Section -->
@@ -174,7 +188,7 @@
         </section>
 
         <!-- Feature Blocks Section -->
-        <section class="feature-blocks" aria-label="I nostri punti di forza">
+        <section class="feature-blocks" id="feature-blocks" aria-label="I nostri punti di forza">
 
             <!-- Block 1: White - Image Left, Text Right -->
             <article class="feature-block feature-block--white">
@@ -283,5 +297,27 @@
             <p>&copy; 2024 Cotto e Mangiato. Tutti i diritti riservati.</p>
         </div>
     </footer>
+
+    <!-- Sticky Header Script -->
+    <script>
+        (function() {
+            const header = document.getElementById('stickyHeader');
+            const hero = document.querySelector('.hero');
+
+            function handleScroll() {
+                const heroBottom = hero.offsetTop + hero.offsetHeight;
+                const scrollY = window.scrollY || window.pageYOffset;
+
+                if (scrollY > heroBottom - 100) {
+                    header.classList.add('visible');
+                } else {
+                    header.classList.remove('visible');
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+        })();
+    </script>
 </body>
 </html>
