@@ -236,41 +236,50 @@
 
         </section>
 
-        <!-- News Section -->
+        <!-- News Section - Slideshow -->
         <section class="news-section" id="novita" aria-labelledby="news-title">
-            <div class="news-container">
-                <h2 id="news-title">Novità</h2>
-                <div class="news-grid">
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="./images/news-1.jpg" alt="Novità 1" loading="lazy">
+            <h2 id="news-title">Novità</h2>
+            <div class="news-slideshow" id="newsSlideshow">
+                <div class="news-slides">
+                    <!-- Slide 1 -->
+                    <article class="news-slide active">
+                        <div class="news-slide-image">
+                            <img src="./images/news-1.jpg" alt="Novità 1">
                         </div>
-                        <div class="news-content">
+                        <div class="news-slide-content">
                             <span class="news-date">Data da inserire</span>
                             <h3>Titolo Novità 1</h3>
-                            <p>Descrizione della novità da inserire qui.</p>
+                            <p>Descrizione della novità da inserire qui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </article>
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="./images/news-2.jpg" alt="Novità 2" loading="lazy">
+                    <!-- Slide 2 -->
+                    <article class="news-slide">
+                        <div class="news-slide-image">
+                            <img src="./images/news-2.jpg" alt="Novità 2">
                         </div>
-                        <div class="news-content">
+                        <div class="news-slide-content">
                             <span class="news-date">Data da inserire</span>
                             <h3>Titolo Novità 2</h3>
-                            <p>Descrizione della novità da inserire qui.</p>
+                            <p>Descrizione della novità da inserire qui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </article>
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="./images/news-3.jpg" alt="Novità 3" loading="lazy">
+                    <!-- Slide 3 -->
+                    <article class="news-slide">
+                        <div class="news-slide-image">
+                            <img src="./images/news-3.jpg" alt="Novità 3">
                         </div>
-                        <div class="news-content">
+                        <div class="news-slide-content">
                             <span class="news-date">Data da inserire</span>
                             <h3>Titolo Novità 3</h3>
-                            <p>Descrizione della novità da inserire qui.</p>
+                            <p>Descrizione della novità da inserire qui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </article>
+                </div>
+                <!-- Dots Navigation -->
+                <div class="news-dots">
+                    <button class="news-dot active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="news-dot" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="news-dot" data-slide="2" aria-label="Slide 3"></button>
                 </div>
             </div>
         </section>
@@ -356,6 +365,47 @@
 
             window.addEventListener('scroll', handleScroll, { passive: true });
             handleScroll();
+        })();
+    </script>
+
+    <!-- News Slideshow Script -->
+    <script>
+        (function() {
+            const slides = document.querySelectorAll('.news-slide');
+            const dots = document.querySelectorAll('.news-dot');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    dots[i].classList.remove('active');
+                });
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }
+
+            function startSlideshow() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Click on dots to change slide
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    showSlide(index);
+                    startSlideshow();
+                });
+            });
+
+            // Start automatic slideshow
+            startSlideshow();
         })();
     </script>
 </body>
