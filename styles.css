@@ -324,13 +324,16 @@ address {
     width: 100%;
     height: 100%;
     min-height: 280px;
+    padding: var(--spacing-lg);
+    background-color: var(--color-black);
 }
 
 .map-wrapper iframe {
     width: 100%;
     height: 100%;
-    min-height: 280px;
+    min-height: 250px;
     filter: grayscale(20%);
+    border-radius: 8px;
 }
 
 /* Contact Info */
@@ -422,6 +425,7 @@ address {
 
 .feature-blocks {
     width: 100%;
+    padding-top: var(--spacing-xxl);
 }
 
 .feature-block {
@@ -497,6 +501,91 @@ address {
 
 .feature-block--white .feature-content p {
     color: var(--color-gray-dark);
+}
+
+/* ==========================================================================
+   News Section
+   ========================================================================== */
+
+.news-section {
+    background-color: var(--color-black);
+    padding: var(--spacing-xxl) 0;
+    margin-top: var(--spacing-xxl);
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.news-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.news-card {
+    background-color: var(--color-black-light);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: var(--spacing-md);
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: var(--color-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin: var(--spacing-xs) 0 var(--spacing-sm);
+}
+
+.news-content p {
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -663,6 +752,10 @@ address {
         gap: var(--spacing-lg);
     }
 
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .sticky-nav {
         gap: var(--spacing-md);
     }
@@ -712,6 +805,14 @@ address {
 
     .hours-list li {
         font-size: 0.9rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-section h2 {
+        font-size: 2rem;
     }
 
     .footer-container {
