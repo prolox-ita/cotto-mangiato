@@ -416,12 +416,122 @@ address {
 
 .footer {
     background-color: var(--color-black);
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-xl) 0 0;
     border-top: 1px solid var(--color-black-light);
 }
 
-.copyright {
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Footer Brand */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: var(--spacing-sm);
+    filter: brightness(0) invert(1);
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
+/* Footer Sections */
+.footer-contact h4,
+.footer-hours h4,
+.footer-social h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+}
+
+.footer-contact address {
+    font-style: normal;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-gray);
+}
+
+.footer-contact a:hover {
+    color: var(--color-red);
+}
+
+.footer-contact svg {
+    flex-shrink: 0;
+    color: var(--color-red);
+}
+
+/* Footer Hours */
+.footer-hours p {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-hours .closed {
+    color: var(--color-red);
+}
+
+/* Footer Social */
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-black-light);
+    border-radius: 50%;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--color-red);
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid var(--color-black-light);
     text-align: center;
+}
+
+.footer-bottom p {
     font-size: 0.85rem;
     color: var(--color-gray-dark);
 }
@@ -457,6 +567,11 @@ address {
 
     .feature-content {
         padding: var(--spacing-lg);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
     }
 }
 
@@ -496,6 +611,24 @@ address {
 
     .hours-list li {
         font-size: 0.9rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .footer-logo {
+        max-width: 120px;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 }
 
