@@ -237,8 +237,20 @@ address {
 .hero-logo {
     max-width: 280px;
     height: auto;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
     filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+}
+
+/* Hero Tagline */
+.hero-tagline {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================
