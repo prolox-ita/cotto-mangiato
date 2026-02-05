@@ -12,8 +12,8 @@
     --color-gray: #cccccc;
     --color-gray-dark: #888888;
 
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Bebas Neue', Impact, sans-serif;
+    --font-body: 'Bebas Neue', Impact, sans-serif;
 
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -543,6 +543,7 @@ address {
 .news-slides {
     position: relative;
     width: 100%;
+    height: 500px;
     min-height: 500px;
 }
 
