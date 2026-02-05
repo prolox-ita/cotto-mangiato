@@ -12,8 +12,8 @@
     --color-gray: #cccccc;
     --color-gray-dark: #888888;
 
-    --font-heading: 'Bebas Neue', Impact, sans-serif;
-    --font-body: 'Bebas Neue', Impact, sans-serif;
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
